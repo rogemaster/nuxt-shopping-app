@@ -32,12 +32,12 @@ export default {
     // 함수형태
     head() {
         return {
-            title: `Shopping Item Detail - ${tthis.product.name}`,
+            title: `Shopping Item Detail - ${this.product.name}`,
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: `이 상품은 ${tthis.product.name} 입니다.`,
+                    content: `이 상품은 ${this.product.name} 입니다.`,
                 },
             ],
         }
