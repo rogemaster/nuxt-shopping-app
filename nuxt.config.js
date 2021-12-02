@@ -50,5 +50,12 @@ export default {
   // server
   server: {
     port: process.env.NODE_ENV === 'production' ? null : 5000,
+  },
+
+  // env
+  env: {
+    baseURL: process.env.NODE_ENV === 'production' 
+    ? 'https://my-json-server.typicode.com/rogemaster/nuxt-shopping-api' 
+    : 'http://localhost:3000'
   }
 }
