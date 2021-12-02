@@ -25,9 +25,8 @@
 </template>
 
 <script>
-import axios from 'axios';
 import SearchInput from '@/components/SearchInput';
-import { fetchProductByKeyword } from '@/api/index';
+import { fetchProducts, fetchProductByKeyword } from '@/api/index';
 import Header from '@/components/header.vue';
 
 export default {
@@ -42,7 +41,7 @@ export default {
     // asyncData의 return값은 컴포넌트의 data와 병합된다. 
 	// {isDev, route, store, env, params, query, req, res, redirect, error}
     async asyncData() {
-        const res = await axios.get('http://localhost:3000/products');
+        const res = await fetchProducts();
         const products = res.data.map((item) => ({
             ...item,
             imageUrl: `${item.imageUrl}?random=${Math.random()}`
