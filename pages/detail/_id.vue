@@ -29,16 +29,18 @@ export default {
         console.log(product);
         return { product };
     },
-
-    head: {
-        title: 'Shopping Item Detail',
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content: '이 상품은 ~~ 입니다.',
-            },
-        ],
+    // 함수형태
+    head() {
+        return {
+            title: `Shopping Item Detail - ${tthis.product.name}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: `이 상품은 ${tthis.product.name} 입니다.`,
+                },
+            ],
+        }
     },
 
     methods: {
